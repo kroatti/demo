@@ -1,0 +1,65 @@
+<div class="mb-2 row">
+  <label for="serial" class="col-sm-4 col-form-label-sm">Sorszám</label>
+  <div class="col-sm-8">
+    <input type="text" readonly class="form-control-plaintext form-control-sm" id="serial" [ngModel]="invoice?.serial">
+  </div>
+</div>
+
+<div class="mb-2 row">
+  <label for="clientName" class="col-sm-4 col-form-label-sm">Név</label>
+  <div class="col-sm-8">
+    <input type="text" readonly class="form-control-plaintext form-control-sm" id="clientName" [ngModel]="invoice?.clientName">
+  </div>
+</div>
+
+<div class="mb-2 row">
+  <label for="clientAddress" class="col-sm-4 col-form-label-sm">Cím</label>
+  <div class="col-sm-8">
+    <input type="text" readonly class="form-control-plaintext form-control-sm" id="clientAddress" [ngModel]="invoice?.clientAddress">
+  </div>
+</div>
+
+<div class="mb-2 row">
+  <label for="clientBankAccountNumber" class="col-sm-4 col-form-label-sm">Bankszámlaszám</label>
+  <div class="col-sm-8">
+    <input type="text" readonly class="form-control-plaintext form-control-sm" id="clientBankAccountNumber"
+           [ngModel]="invoice?.clientBankAccountNumber">
+  </div>
+</div>
+
+<div class="mb-2 row">
+  <label for="clientTaxNumber" class="col-sm-4 col-form-label-sm">Adószám</label>
+  <div class="col-sm-8">
+    <input type="text" readonly class="form-control-plaintext form-control-sm" id="clientTaxNumber"
+           [ngModel]="invoice?.clientTaxNumber">
+  </div>
+</div>
+
+<div class="mb-2 row">
+  <label for="items" class="col-sm-4 col-form-label-sm">Tételek</label>
+  <div class="col-sm-8">
+    <ul id="items">
+      <li *ngFor="let item of invoice?.invoiceItems">
+        {{item.quantity}} {{item.unit}} - {{item.name}} - {{item.unitPrice | currency: 'HUF':'symbol-narrow':'1.2-2' }}/{{item.unit}} - {{item.amount | currency: 'HUF':'symbol-narrow':'1.2-2'}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="mb-2 row">
+  <label for="amount" class="col-sm-4 col-form-label-sm text-s">Összesen</label>
+  <div class="col-sm-8">
+    <input type="text" readonly class="form-control-plaintext form-control-sm" id="amount"
+           [ngModel]="invoice?.amount | currency: 'HUF':'symbol-narrow':'1.2-2'">
+  </div>
+</div>
+
+<div class="mb-2 row">
+  <label for="createdOn" class="col-sm-4 col-form-label-sm">Létrehozva</label>
+  <div class="col-sm-8">
+    <input type="text" readonly class="form-control-plaintext form-control-sm" id="createdOn"
+           [ngModel]="invoice?.createdOn | date:'short'">
+  </div>
+</div>
+
+

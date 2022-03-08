@@ -1,0 +1,48 @@
+<form (submit)="submit()" #form=ngForm>
+  <div class="mb-3 row">
+    <label for="clientName" class="col-sm-2 col-form-label-sm text-end">Név</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="clientName" name="clientName" placeholder="Minta kft."
+             [(ngModel)]="model.clientName">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="clientAddress" class="col-sm-2 col-form-label-sm text-end">Cím</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="clientAddress" name="clientAddress"
+             placeholder="Budapest, Példa utca 29" [(ngModel)]="model.clientAddress">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="clientBankAccountNumber" class="col-sm-2 col-form-label-sm text-end">Bankszámlaszám</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="clientBankAccountNumber" #inp1="ngModel" [ngClass]="{'is-invalid': inp1.invalid}"
+             name="clientBankAccountNumber"
+             placeholder="12345678-00000000-87654321" [(ngModel)]="model.clientBankAccountNumber">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="clientTaxNumber" class="col-sm-2 col-form-label-sm text-end">Adószám</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="clientTaxNumber" name="clientTaxNumber"
+             placeholder="1234567-89-0"
+             [(ngModel)]="model.clientTaxNumber">
+    </div>
+  </div>
+
+  <!--  <div class="mb-3">-->
+  <!--    <label for="items" class="form-label-sm">Tételek</label>-->
+  <!--    <input type="text" class="form-control form-control-sm" id="items" placeholder="name@example.com">-->
+  <!--  </div>-->
+
+  <div class="mb-3 row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <button class="btn btn-primary" type="submit">Mentés</button>
+    </div>
+  </div>
+
+</form>
